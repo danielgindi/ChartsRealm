@@ -4,7 +4,8 @@
   ![Supported Platforms](https://img.shields.io/cocoapods/p/ChartsRealm.svg) [![Releases](https://img.shields.io/github/release/danielgindi/ChartsRealm.svg)](https://github.com/danielgindi/ChartsRealm/releases) [![Latest pod release](https://img.shields.io/cocoapods/v/ChartsRealm.svg)](http://cocoapods.org/pods/chartsrealm) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/danielgindi/ChartsRealm.svg?branch=master)](https://travis-ci.org/danielgindi/ChartsRealm) [![codecov](https://codecov.io/gh/danielgindi/ChartsRealm/branch/master/graph/badge.svg)](https://codecov.io/gh/danielgindi/ChartsRealm)
 [![Join the chat at https://gitter.im/danielgindi/Charts](https://badges.gitter.im/danielgindi/Charts.svg)](https://gitter.im/danielgindi/Charts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-### We've separated ChartsRealm from the main repositoy, for easier handling of dependencies.
+### We've separated ChartsRealm from the main repositoy, for easier handling of dependencies.  
+### Please avoid duplicate issues. Post on this repo for Charts+Realm specific problems, and other stuff in the issues section of the core Charts repo.  
 
 * Xcode 8.0 / Swift 3.1
 * iOS >= 8.0 (Use as an **Embedded** Framework)
