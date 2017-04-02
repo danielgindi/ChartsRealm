@@ -1,6 +1,6 @@
 //
 //  RealmLineChartViewController.m
-//  ChartsDemo
+//  ChartsRealmDemo
 //
 //  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
 //  A port of MPAndroidChart for iOS
@@ -10,7 +10,7 @@
 //
 
 #import "RealmLineChartViewController.h"
-#import "ChartsDemo-Swift.h"
+#import "ChartsRealmDemo-Swift.h"
 #import <Realm/Realm.h>
 #import "RealmDemoData.h"
 

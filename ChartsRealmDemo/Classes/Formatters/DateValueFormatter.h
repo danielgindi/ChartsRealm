@@ -1,6 +1,6 @@
 //
 //  DateValueFormatter.h
-//  ChartsDemo
+//  ChartsRealmDemo
 //
 //  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
 //  A port of MPAndroidChart for iOS
@@ -10,7 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChartsDemo-Swift.h"
+#import "ChartsRealmDemo-Swift.h"
 
 @interface DateValueFormatter : NSObject <IChartAxisValueFormatter>
 

@@ -1,6 +1,6 @@
 //
 //  LargeValueFormatter.swift
-//  ChartsDemo
+//  ChartsRealmDemo
 //  Copyright © 2016 dcg. All rights reserved.
 //
 

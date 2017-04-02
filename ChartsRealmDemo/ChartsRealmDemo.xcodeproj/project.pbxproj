@@ -47,6 +47,9 @@
 		5B7B3AEA1C4445E7001C109B /* RealmScatterChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7B3AE81C4445E7001C109B /* RealmScatterChartViewController.xib */; };
 		5B8EAF281AB32CF5009697AA /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EAF261AB32CF5009697AA /* DemoBaseViewController.m */; };
 		5B8EAF301AB32E15009697AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EAF2F1AB32E15009697AA /* Images.xcassets */; };
+		5B90F5AC1E91335800674000 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0630AE361D8126B1008859B0 /* Realm.framework */; };
+		5B90F5AD1E91335A00674000 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B90F5AA1E91331E00674000 /* Charts.framework */; };
+		5B90F5AE1E91337A00674000 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B90F5AA1E91331E00674000 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BD47E5B1ABB0263008FCEC6 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD47E5A1ABB0263008FCEC6 /* BalloonMarker.swift */; };
 		5BE377DE1D425151006EB34F /* DayAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE377DD1D425151006EB34F /* DayAxisValueFormatter.m */; };
 		5BE377F21D47FDF1006EB34F /* IntAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE377F11D47FDF1006EB34F /* IntAxisValueFormatter.m */; };
@@ -84,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5B90F5AE1E91337A00674000 /* Charts.framework in Embed Frameworks */,
 				5B1B5DA21E911559006D1375 /* ChartsRealm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -121,7 +125,7 @@
 		5B4AC19B1C4C19340028D1A6 /* RealmWikiExampleChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmWikiExampleChartViewController.h; sourceTree = "<group>"; };
 		5B4AC19C1C4C19340028D1A6 /* RealmWikiExampleChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmWikiExampleChartViewController.m; sourceTree = "<group>"; };
 		5B4AC19D1C4C19340028D1A6 /* RealmWikiExampleChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealmWikiExampleChartViewController.xib; sourceTree = "<group>"; };
-		5B57BBAF1A9B26AA0036A6CC /* ChartsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B57BBAF1A9B26AA0036A6CC /* ChartsRealmDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsRealmDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B57BBB31A9B26AA0036A6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B57BBB41A9B26AA0036A6CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B57BBB61A9B26AA0036A6CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,8 +150,9 @@
 		5B8EAF251AB32CF5009697AA /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
 		5B8EAF261AB32CF5009697AA /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
 		5B8EAF2F1AB32E15009697AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5B90F5AA1E91331E00674000 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		5BD47E5A1ABB0263008FCEC6 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
-		5BD47E5C1ABB0273008FCEC6 /* ChartsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChartsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		5BD47E5C1ABB0273008FCEC6 /* ChartsRealmDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChartsRealmDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		5BE377DC1D425151006EB34F /* DayAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayAxisValueFormatter.h; sourceTree = "<group>"; };
 		5BE377DD1D425151006EB34F /* DayAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayAxisValueFormatter.m; sourceTree = "<group>"; };
 		5BE377F01D47FDF1006EB34F /* IntAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntAxisValueFormatter.h; sourceTree = "<group>"; };
@@ -173,6 +178,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B90F5AD1E91335A00674000 /* Charts.framework in Frameworks */,
+				5B90F5AC1E91335800674000 /* Realm.framework in Frameworks */,
 				5B1B5DA11E911559006D1375 /* ChartsRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +236,7 @@
 		5B57BBB01A9B26AA0036A6CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B57BBAF1A9B26AA0036A6CC /* ChartsDemo.app */,
+				5B57BBAF1A9B26AA0036A6CC /* ChartsRealmDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,7 +264,7 @@
 			children = (
 				5B57BBB31A9B26AA0036A6CC /* Info.plist */,
 				5B57BBB41A9B26AA0036A6CC /* main.m */,
-				5BD47E5C1ABB0273008FCEC6 /* ChartsDemo-Bridging-Header.h */,
+				5BD47E5C1ABB0273008FCEC6 /* ChartsRealmDemo-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1B5D9B1E91152D006D1375 /* ChartsRealm.xcodeproj */,
+				5B90F5AA1E91331E00674000 /* Charts.framework */,
 				0630AE361D8126B1008859B0 /* Realm.framework */,
 			);
 			name = Frameworks;
@@ -375,7 +383,7 @@
 				5B57BBAC1A9B26AA0036A6CC /* Frameworks */,
 				5B57BBAD1A9B26AA0036A6CC /* Resources */,
 				5BB4B0751ACA710D00E2EF4D /* Embed Frameworks */,
-				066750AE1E2DB70B00E22DC6 /* Copy Carthage Frameworks */,
+				5B90F5A71E91317200674000 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,7 +392,7 @@
 			);
 			name = ChartsRealmDemo;
 			productName = chartstest;
-			productReference = 5B57BBAF1A9B26AA0036A6CC /* ChartsDemo.app */;
+			productReference = 5B57BBAF1A9B26AA0036A6CC /* ChartsRealmDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -474,7 +482,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		066750AE1E2DB70B00E22DC6 /* Copy Carthage Frameworks */ = {
+		5B90F5A71E91317200674000 /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -633,9 +641,9 @@
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealmDemo;
-				PRODUCT_NAME = ChartsDemo;
+				PRODUCT_NAME = ChartsRealmDemo;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/ChartsDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/ChartsRealmDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -653,9 +661,9 @@
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealmDemo;
-				PRODUCT_NAME = ChartsDemo;
+				PRODUCT_NAME = ChartsRealmDemo;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/ChartsDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/ChartsRealmDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -1,6 +1,6 @@
 //
 //  RealmDemoData.m
-//  ChartsDemo
+//  ChartsRealmDemo
 //  Copyright © 2015 dcg. All rights reserved.
 //
 
