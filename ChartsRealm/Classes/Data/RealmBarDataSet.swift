@@ -200,7 +200,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         if value is RLMArray
         {
             var values = [Double]()
-            let iterator = NSFastEnumerationIterator(value as! RLMArray)
+            var iterator = NSFastEnumerationIterator(value as! RLMArray)
             while let val = iterator.next()
             {
                 values.append((val as! RLMObject)[_stackValueField!] as! Double)
