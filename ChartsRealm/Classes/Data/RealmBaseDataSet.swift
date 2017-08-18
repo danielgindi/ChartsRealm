@@ -238,7 +238,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         
         var xValue: Double = 0.0
         
-        let iterator = NSFastEnumerationIterator(results)
+        var iterator = NSFastEnumerationIterator(results)
         while let e = iterator.next()
         {
             _cache.append(buildEntryFromResultObject(e as! RLMObject, x: xValue))
