@@ -1,2 +1,2 @@
-github "danielgindi/Charts" ~> 3.0.2
-github "realm/realm-cocoa" ~> 2.5
+github "danielgindi/Charts" == 3.0.3
+github "realm/realm-cocoa" ~> 2.10
