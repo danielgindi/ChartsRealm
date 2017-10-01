@@ -155,6 +155,7 @@
 				TargetAttributes = {
 					06B120D41D811E6200D14B02 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -360,6 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -380,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

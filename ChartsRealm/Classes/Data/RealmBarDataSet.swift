@@ -33,7 +33,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         super.init(results: results, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
+    @objc public init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
     {
         _stackValueField = stackValueField
         
@@ -52,7 +52,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, stackValueField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, stackValueField: String)
     {
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: "DataSet")
     }
@@ -69,7 +69,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: "DataSet")
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, yValueField: String, stackValueField: String, label: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String, stackValueField: String, label: String)
     {
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
@@ -86,7 +86,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: converted, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, yValueField: String, stackValueField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String, stackValueField: String)
     {
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
     }
@@ -108,7 +108,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         super.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
+    @objc public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
     {
         _stackValueField = stackValueField
         
@@ -127,7 +127,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String)
+    @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String)
     {
         self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
     }
@@ -144,7 +144,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
     }
     
-    public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, stackValueField: String, label: String?)
+    @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, stackValueField: String, label: String?)
     {
         self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
@@ -161,7 +161,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
     
-    public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, stackValueField: String)
+    @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, stackValueField: String)
     {
         self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: nil)
     }
@@ -186,7 +186,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     
     // MARK: - Data functions and accessors
     
-    internal var _stackValueField: String?
+    @objc internal var _stackValueField: String?
     
     /// the maximum number of bars that are stacked upon each other, this value
     /// is calculated from the Entries that are added to the DataSet

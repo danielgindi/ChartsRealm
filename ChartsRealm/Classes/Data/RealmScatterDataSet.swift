@@ -31,7 +31,7 @@ open class RealmScatterDataSet: RealmLineScatterCandleRadarDataSet, IScatterChar
     
     /// Sets the ScatterShape this DataSet should be drawn with.
     /// This will search for an available IShapeRenderer and set this renderer for the DataSet
-    open func setScatterShape(_ shape: ScatterChartDataSet.Shape)
+    @objc open func setScatterShape(_ shape: ScatterChartDataSet.Shape)
     {
         self.shapeRenderer = ScatterChartDataSet.renderer(forShape: shape)
     }

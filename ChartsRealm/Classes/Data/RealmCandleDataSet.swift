@@ -28,7 +28,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         super.init()
     }
 
-    public init(results: RLMResults<RLMObject>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
+    @objc public init(results: RLMResults<RLMObject>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
     {
         _highField = highField
         _lowField = lowField
@@ -50,7 +50,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         self.init(results: converted, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
     {
         self.init(results: results, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField, label: "DataSet")
     }
@@ -67,7 +67,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         self.init(results: converted, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField)
     }
     
-    public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
+    @objc public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
     {
         _highField = highField
         _lowField = lowField
@@ -91,10 +91,10 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
     
     // MARK: - Data functions and accessors
     
-    internal var _highField: String?
-    internal var _lowField: String?
-    internal var _openField: String?
-    internal var _closeField: String?
+    @objc internal var _highField: String?
+    @objc internal var _lowField: String?
+    @objc internal var _openField: String?
+    @objc internal var _closeField: String?
     
     internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
     {

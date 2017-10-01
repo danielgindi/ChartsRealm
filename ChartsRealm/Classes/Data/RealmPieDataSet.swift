@@ -29,7 +29,7 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
         super.init()
     }
     
-    public init(results: RLMResults<RLMObject>?, yValueField: String, labelField: String?)
+    @objc public init(results: RLMResults<RLMObject>?, yValueField: String, labelField: String?)
     {
         _labelField = labelField
         
@@ -50,7 +50,7 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
     
     // MARK: - Data functions and accessors
     
-    internal var _labelField: String?
+    @objc internal var _labelField: String?
     
     internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
     {
