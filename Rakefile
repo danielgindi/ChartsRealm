@@ -138,7 +138,7 @@ end
 
 desc 'updated the podspec on cocoapods'
 task :update_pod do
-  sh 'bundle exec pod trunk push Charts.podspec --allow-warnings'
+  sh 'bundle exec pod trunk push ChartsRealm.podspec --allow-warnings'
 end
 
 desc 'generate changelog'
