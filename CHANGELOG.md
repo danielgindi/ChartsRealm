@@ -1,5 +1,16 @@
 # Change Log
 
+## [v3.0.3](https://github.com/danielgindi/ChartsRealm/tree/v3.0.3) (2017-10-01)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.2...v3.0.3)
+
+**Closed issues:**
+
+- ChartsRealm 3.0.2 Error in Xcode 9 beta: Use of mutating member on immutable value [\#3](https://github.com/danielgindi/ChartsRealm/issues/3)
+
+**Merged pull requests:**
+
+- Add support for xcode 9/swift 3.2 [\#7](https://github.com/danielgindi/ChartsRealm/pull/7) ([petester42](https://github.com/petester42))
+
 ## [v3.0.2](https://github.com/danielgindi/ChartsRealm/tree/v3.0.2) (2017-04-02)
 
 
