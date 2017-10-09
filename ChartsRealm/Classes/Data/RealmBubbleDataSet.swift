@@ -27,7 +27,7 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
         super.init()
     }
     
-    public init(results: RLMResults<RLMObject>?, xValueField: String, yValueField: String, sizeField: String, label: String?)
+    @objc public init(results: RLMResults<RLMObject>?, xValueField: String, yValueField: String, sizeField: String, label: String?)
     {
         _sizeField = sizeField
         
@@ -46,7 +46,7 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, sizeField: sizeField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, xValueField: String, yValueField: String, sizeField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, xValueField: String, yValueField: String, sizeField: String)
     {
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, sizeField: sizeField, label: "DataSet")
     }
@@ -63,7 +63,7 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, sizeField: sizeField)
     }
     
-    public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String, yValueField: String, sizeField: String, label: String?)
+    @objc public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String, yValueField: String, sizeField: String, label: String?)
     {
         _sizeField = sizeField
         
@@ -84,12 +84,12 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
     
     // MARK: - Data functions and accessors
     
-    internal var _sizeField: String?
+    @objc internal var _sizeField: String?
     
-    internal var _maxSize = CGFloat(0.0)
+    @objc internal var _maxSize = CGFloat(0.0)
     
     open var maxSize: CGFloat { return _maxSize }
-    open var normalizeSizeEnabled: Bool = true
+    @objc open var normalizeSizeEnabled: Bool = true
     open var isNormalizeSizeEnabled: Bool { return normalizeSizeEnabled }
     
     internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry

@@ -17,7 +17,7 @@ import Realm.Dynamic
 
 open class RealmBaseDataSet: ChartBaseDataSet
 {
-    open func initialize()
+    @objc open func initialize()
     {
         fatalError("RealmBaseDataSet is an abstract class, you must inherit from it. Also please do not call super.initialize().")
     }
@@ -44,7 +44,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         initialize()
     }
     
-    public init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, label: String?)
+    @objc public init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, label: String?)
     {
         super.init()
         
@@ -79,7 +79,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, yValueField: String, label: String?)
+    @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String, label: String?)
     {
         self.init(results: results, xValueField: nil, yValueField: yValueField, label: label)
     }
@@ -96,7 +96,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: converted, yValueField: yValueField, label: label)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String)
     {
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, label: "DataSet")
     }
@@ -113,7 +113,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField)
     }
     
-    public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
+    @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
     {
         self.init(results: results, yValueField: yValueField)
     }
@@ -130,7 +130,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: converted, yValueField: yValueField)
     }
     
-    public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, label: String?)
+    @objc public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, label: String?)
     {
         super.init()
         
@@ -162,7 +162,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
+    @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
     {
         self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, label: label)
     }
@@ -179,12 +179,12 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, yValueField: yValueField, label: label)
     }
     
-    open func loadResults(realm: RLMRealm, modelName: String)
+    @objc open func loadResults(realm: RLMRealm, modelName: String)
     {
         loadResults(realm: realm, modelName: modelName, predicate: nil)
     }
     
-    open func loadResults(realm: RLMRealm, modelName: String, predicate: NSPredicate?)
+    @objc open func loadResults(realm: RLMRealm, modelName: String, predicate: NSPredicate?)
     {
         if predicate == nil
         {
@@ -217,19 +217,19 @@ open class RealmBaseDataSet: ChartBaseDataSet
     
     // MARK: - Data functions and accessors
     
-    internal var _results: RLMResults<RLMObject>?
-    internal var _yValueField: String?
-    internal var _xValueField: String?
-    internal var _cache = [ChartDataEntry]()
+    @objc internal var _results: RLMResults<RLMObject>?
+    @objc internal var _yValueField: String?
+    @objc internal var _xValueField: String?
+    @objc internal var _cache = [ChartDataEntry]()
     
-    internal var _yMax: Double = -Double.greatestFiniteMagnitude
-    internal var _yMin: Double = Double.greatestFiniteMagnitude
+    @objc internal var _yMax: Double = -Double.greatestFiniteMagnitude
+    @objc internal var _yMin: Double = Double.greatestFiniteMagnitude
     
-    internal var _xMax: Double = -Double.greatestFiniteMagnitude
-    internal var _xMin: Double = Double.greatestFiniteMagnitude
+    @objc internal var _xMax: Double = -Double.greatestFiniteMagnitude
+    @objc internal var _xMin: Double = Double.greatestFiniteMagnitude
     
     /// Makes sure that the cache is populated for the specified range
-    internal func buildCache()
+    @objc internal func buildCache()
     {
         guard let results = _results else { return }
         
@@ -246,7 +246,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         }
     }
     
-    internal func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    @objc internal func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
     {
         let entry = ChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: object[_yValueField!] as! Double)
         
@@ -254,7 +254,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
     }
     
     /// Makes sure that the cache is populated for the specified range
-    internal func clearCache()
+    @objc internal func clearCache()
     {
         _cache.removeAll()
     }
@@ -287,7 +287,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
      /// Updates the min and max x and y value of this DataSet based on the given Entry.
      ///
      /// - parameter e:
-    internal func calcMinMax(entry e: ChartDataEntry)
+    @objc internal func calcMinMax(entry e: ChartDataEntry)
     {
         if e.y < _yMin
         {
@@ -606,7 +606,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
     }
     
     /// - returns: The fieldname that represents the "y-values" in the realm-data.
-    open var yValueField: String?
+    @objc open var yValueField: String?
     {
         get
         {
@@ -615,7 +615,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
     }
     
     /// - returns: The fieldname that represents the "x-values" in the realm-data.
-    open var xValueField: String?
+    @objc open var xValueField: String?
     {
         get
         {
