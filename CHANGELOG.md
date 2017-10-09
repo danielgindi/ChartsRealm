@@ -1,5 +1,24 @@
 # Change Log
 
+## [Unreleased](https://github.com/danielgindi/ChartsRealm/tree/HEAD)
+
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.4...HEAD)
+
+**Closed issues:**
+
+- Can't push new pod version [\#8](https://github.com/danielgindi/ChartsRealm/issues/8)
+
+## [v3.0.4](https://github.com/danielgindi/ChartsRealm/tree/v3.0.4) (2017-10-09)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.3...v3.0.4)
+
+**Closed issues:**
+
+- Can't update the pod [\#10](https://github.com/danielgindi/ChartsRealm/issues/10)
+
+**Merged pull requests:**
+
+- Swift 4 Support [\#9](https://github.com/danielgindi/ChartsRealm/pull/9) ([petester42](https://github.com/petester42))
+
 ## [v3.0.3](https://github.com/danielgindi/ChartsRealm/tree/v3.0.3) (2017-10-01)
 [Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.2...v3.0.3)
 
