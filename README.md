@@ -7,7 +7,7 @@
 ### We've separated ChartsRealm from the main repositoy, for easier handling of dependencies.  
 ### Please avoid duplicate issues. Post on this repo for Charts+Realm specific problems, and other stuff in the issues section of the core Charts repo.  
 
-* Xcode 8.0 / Swift 3.1
+* Xcode 9.0 / Swift 4.0
 * iOS >= 8.0 (Use as an **Embedded** Framework)
 * tvOS >= 9.0
 * macOS >= 10.11
@@ -18,7 +18,7 @@
 * Make sure you are running a supported version of Xcode.
   * Usually it is specified here a few lines above.
   * In most cases it will be the latest Xcode version.
-* Make sure that your project supports Swift 3.1
+* Make sure that your project supports Swift 4.0
 * Run `carthage checkout` in the project folder, to fetch dependencies (i.e Realm).
   * Realm is not required for using Charts. If you are not interested in using realm, go for the core library, [here](https://github.com/danielgindi/Charts).
   * If you don't have Carthage - you can get it [here](https://github.com/Carthage/Carthage/releases).
