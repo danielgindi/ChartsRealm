@@ -70,10 +70,10 @@
 
     BarChartData *data = [[BarChartData alloc] initWithDataSets:dataSets];
     [self styleData:data];
-    
-    [_chartView zoomWithScaleX:5.f scaleY:1.f x:0.f y:0.f];
+
     _chartView.fitBars = YES;
     _chartView.data = data;
+    [_chartView zoomWithScaleX:5.f scaleY:1.f x:0.f y:0.f];
     
     [_chartView animateWithYAxisDuration:1.4 easingOption:ChartEasingOptionEaseInOutQuart];
 }
