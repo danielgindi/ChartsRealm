@@ -40,7 +40,7 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, sizeField: sizeField, label: label)
@@ -57,7 +57,7 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, sizeField: sizeField)

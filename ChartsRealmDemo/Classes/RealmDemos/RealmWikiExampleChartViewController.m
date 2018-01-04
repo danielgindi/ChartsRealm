@@ -98,7 +98,7 @@
     
     // Line chart
     RealmLineDataSet *lineDataSet = [[RealmLineDataSet alloc] initWithResults:(RLMResults<RLMObject *> *)results xValueField:@"scoreNr" yValueField:@"totalScore"];
-    lineDataSet.drawCubicEnabled = NO;
+    lineDataSet.mode = LineChartModeLinear;
     lineDataSet.label = @"Result Scores";
     lineDataSet.drawCircleHoleEnabled = NO;
     [lineDataSet setColor:[ChartColorTemplates colorFromString:@"#FF5722"]];

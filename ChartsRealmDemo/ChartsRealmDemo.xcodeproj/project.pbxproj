@@ -17,10 +17,6 @@
 		5B43162C1AB8D8AE0009FCAA /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316241AB8D8AE0009FCAA /* Icon-60@3x.png */; };
 		5B43162D1AB8D8AE0009FCAA /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316251AB8D8AE0009FCAA /* iTunesArtwork */; };
 		5B43162E1AB8D8AE0009FCAA /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316261AB8D8AE0009FCAA /* iTunesArtwork@2x */; };
-		5B4316351AB8D8B70009FCAA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316311AB8D8B70009FCAA /* Default-568h@2x.png */; };
-		5B4316361AB8D8B70009FCAA /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316321AB8D8B70009FCAA /* Default-667h@2x.png */; };
-		5B4316371AB8D8B70009FCAA /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316331AB8D8B70009FCAA /* Default-736h@3x.png */; };
-		5B4316381AB8D8B70009FCAA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4316341AB8D8B70009FCAA /* Default@2x.png */; };
 		5B4AC14C1C47E7250028D1A6 /* RealmBubbleChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AC14A1C47E7250028D1A6 /* RealmBubbleChartViewController.m */; };
 		5B4AC14D1C47E7250028D1A6 /* RealmBubbleChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4AC14B1C47E7250028D1A6 /* RealmBubbleChartViewController.xib */; };
 		5B4AC1511C47E8720028D1A6 /* RealmHorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AC14F1C47E8720028D1A6 /* RealmHorizontalBarChartViewController.m */; };
@@ -61,6 +57,7 @@
 		65BF12B11BFC9B00005C28D9 /* RealmLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BF12AF1BFC9B00005C28D9 /* RealmLineChartViewController.xib */; };
 		65BF12B61BFC9B50005C28D9 /* RealmBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BF12B41BFC9B50005C28D9 /* RealmBarChartViewController.m */; };
 		65BF12B71BFC9B50005C28D9 /* RealmBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BF12B51BFC9B50005C28D9 /* RealmBarChartViewController.xib */; };
+		B6E47BF71FFDB16B0072B35C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E47BF61FFDB16B0072B35C /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,10 +104,6 @@
 		5B4316241AB8D8AE0009FCAA /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 		5B4316251AB8D8AE0009FCAA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		5B4316261AB8D8AE0009FCAA /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
-		5B4316311AB8D8B70009FCAA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5B4316321AB8D8B70009FCAA /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
-		5B4316331AB8D8B70009FCAA /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		5B4316341AB8D8B70009FCAA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5B4AC1491C47E7250028D1A6 /* RealmBubbleChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmBubbleChartViewController.h; sourceTree = "<group>"; };
 		5B4AC14A1C47E7250028D1A6 /* RealmBubbleChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmBubbleChartViewController.m; sourceTree = "<group>"; };
 		5B4AC14B1C47E7250028D1A6 /* RealmBubbleChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealmBubbleChartViewController.xib; sourceTree = "<group>"; };
@@ -171,6 +164,7 @@
 		65BF12B31BFC9B50005C28D9 /* RealmBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmBarChartViewController.h; sourceTree = "<group>"; };
 		65BF12B41BFC9B50005C28D9 /* RealmBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmBarChartViewController.m; sourceTree = "<group>"; };
 		65BF12B51BFC9B50005C28D9 /* RealmBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealmBarChartViewController.xib; sourceTree = "<group>"; };
+		B6E47BF61FFDB16B0072B35C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,17 +204,6 @@
 			path = "app-icon";
 			sourceTree = "<group>";
 		};
-		5B4316301AB8D8B70009FCAA /* launch-image */ = {
-			isa = PBXGroup;
-			children = (
-				5B4316311AB8D8B70009FCAA /* Default-568h@2x.png */,
-				5B4316321AB8D8B70009FCAA /* Default-667h@2x.png */,
-				5B4316331AB8D8B70009FCAA /* Default-736h@3x.png */,
-				5B4316341AB8D8B70009FCAA /* Default@2x.png */,
-			);
-			path = "launch-image";
-			sourceTree = "<group>";
-		};
 		5B57BBA61A9B26AA0036A6CC = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +227,7 @@
 		5B57BBB11A9B26AA0036A6CC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B6E47BF61FFDB16B0072B35C /* Launch Screen.storyboard */,
 				5B57BBB61A9B26AA0036A6CC /* AppDelegate.h */,
 				5B57BBB71A9B26AA0036A6CC /* AppDelegate.m */,
 				5B7B3AD51C437CBC001C109B /* RealmDemoListViewController.h */,
@@ -282,7 +266,6 @@
 			children = (
 				5B8EAF2F1AB32E15009697AA /* Images.xcassets */,
 				5B43161E1AB8D8AE0009FCAA /* app-icon */,
-				5B4316301AB8D8B70009FCAA /* launch-image */,
 				5B613DA21D526AD5000F1E98 /* markers */,
 			);
 			path = Resources;
@@ -455,13 +438,11 @@
 				5B7B3AEA1C4445E7001C109B /* RealmScatterChartViewController.xib in Resources */,
 				5B43162B1AB8D8AE0009FCAA /* Icon-60@2x.png in Resources */,
 				5B43162E1AB8D8AE0009FCAA /* iTunesArtwork@2x in Resources */,
+				B6E47BF71FFDB16B0072B35C /* Launch Screen.storyboard in Resources */,
 				5B4316281AB8D8AE0009FCAA /* Icon-29@3x.png in Resources */,
-				5B4316361AB8D8B70009FCAA /* Default-667h@2x.png in Resources */,
 				5B613DB51D526EA8000F1E98 /* RadarMarkerView.xib in Resources */,
-				5B4316351AB8D8B70009FCAA /* Default-568h@2x.png in Resources */,
 				5B43162A1AB8D8AE0009FCAA /* Icon-40@3x.png in Resources */,
 				5B4AC1571C47EDC50028D1A6 /* RealmRadarChartViewController.xib in Resources */,
-				5B4316381AB8D8B70009FCAA /* Default@2x.png in Resources */,
 				5B613DA41D526AD5000F1E98 /* radar_marker@3x.png in Resources */,
 				65BF12B71BFC9B50005C28D9 /* RealmBarChartViewController.xib in Resources */,
 				5B7B3AE01C437F61001C109B /* RealmCandleChartViewController.xib in Resources */,
@@ -469,7 +450,6 @@
 				65BF12B11BFC9B00005C28D9 /* RealmLineChartViewController.xib in Resources */,
 				5B4AC19F1C4C19340028D1A6 /* RealmWikiExampleChartViewController.xib in Resources */,
 				5B7B3AD91C437CBC001C109B /* RealmDemoListViewController.xib in Resources */,
-				5B4316371AB8D8B70009FCAA /* Default-736h@3x.png in Resources */,
 				5B4316291AB8D8AE0009FCAA /* Icon-40@2x.png in Resources */,
 				5B4316271AB8D8AE0009FCAA /* Icon-29@2x.png in Resources */,
 				5B4AC1521C47E8720028D1A6 /* RealmHorizontalBarChartViewController.xib in Resources */,
@@ -647,10 +627,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SOURCE_ROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealmDemo;
 				PRODUCT_NAME = ChartsRealmDemo;
@@ -668,10 +648,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SOURCE_ROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dcg.ChartsRealmDemo;
 				PRODUCT_NAME = ChartsRealmDemo;

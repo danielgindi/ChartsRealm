@@ -42,7 +42,7 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, yValueField: yValueField, labelField: labelField)
@@ -124,6 +124,9 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
     
     /// the color for the slice-text labels
     open var entryLabelColor: NSUIColor? = nil
+
+    /// the color for the highlighted sector
+    open var highlightColor: NSUIColor? = nil
     
     // MARK: - NSCopying
     

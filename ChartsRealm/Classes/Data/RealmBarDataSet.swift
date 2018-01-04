@@ -46,7 +46,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: label)
@@ -63,7 +63,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: "DataSet")
@@ -80,7 +80,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, yValueField: yValueField, stackValueField: stackValueField, label: label)
@@ -97,7 +97,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, yValueField: yValueField, stackValueField: stackValueField)
@@ -197,13 +197,12 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         let value = object[_yValueField!]
         let entry: BarChartDataEntry
         
-        if value is RLMArray
+        if let array = value as? RLMArray<RLMObject>
         {
             var values = [Double]()
-            var iterator = NSFastEnumerationIterator(value as! RLMArray)
-            while let val = iterator.next()
+            for val in array
             {
-                values.append((val as! RLMObject)[_stackValueField!] as! Double)
+                values.append(val[_stackValueField!] as! Double)
             }
             entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, yValues: values)
         }
