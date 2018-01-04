@@ -39,7 +39,7 @@ open class RealmRadarDataSet: RealmLineRadarDataSet, IRadarChartDataSet
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, yValueField: yValueField, label: label)
@@ -56,7 +56,7 @@ open class RealmRadarDataSet: RealmLineRadarDataSet, IRadarChartDataSet
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, yValueField: yValueField)

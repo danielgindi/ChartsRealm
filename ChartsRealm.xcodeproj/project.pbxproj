@@ -19,6 +19,7 @@
 		5BAE652A1E90EE7700F71CEF /* RealmRadarDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE651C1E90EE7700F71CEF /* RealmRadarDataSet.swift */; };
 		5BAE652B1E90EE7700F71CEF /* RealmScatterDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE651D1E90EE7700F71CEF /* RealmScatterDataSet.swift */; };
 		5BAE652C1E90EE7700F71CEF /* ChartsRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BAE651F1E90EE7700F71CEF /* ChartsRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B64EF0F11FFB4711001E5CA0 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64EF0F01FFB4711001E5CA0 /* RLMSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5BAE651D1E90EE7700F71CEF /* RealmScatterDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmScatterDataSet.swift; sourceTree = "<group>"; };
 		5BAE651F1E90EE7700F71CEF /* ChartsRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartsRealm.h; sourceTree = "<group>"; };
 		5BAE65201E90EE7700F71CEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B64EF0F01FFB4711001E5CA0 /* RLMSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				5BAE651F1E90EE7700F71CEF /* ChartsRealm.h */,
 				5BAE65201E90EE7700F71CEF /* Info.plist */,
+				B64EF0F01FFB4711001E5CA0 /* RLMSupport.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				5BAE65271E90EE7700F71CEF /* RealmLineRadarDataSet.swift in Sources */,
 				5BAE65241E90EE7700F71CEF /* RealmBubbleDataSet.swift in Sources */,
 				5BAE652A1E90EE7700F71CEF /* RealmRadarDataSet.swift in Sources */,
+				B64EF0F11FFB4711001E5CA0 /* RLMSupport.swift in Sources */,
 				5BAE65281E90EE7700F71CEF /* RealmLineScatterCandleRadarDataSet.swift in Sources */,
 				5BAE65221E90EE7700F71CEF /* RealmBarLineScatterCandleBubbleDataSet.swift in Sources */,
 				5BAE65231E90EE7700F71CEF /* RealmBaseDataSet.swift in Sources */,

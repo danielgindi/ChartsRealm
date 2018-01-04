@@ -44,7 +44,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField, label: label)
@@ -61,7 +61,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         
         if results != nil
         {
-            converted = ObjectiveCSupport.convert(object: results!)
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
         
         self.init(results: converted, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField)

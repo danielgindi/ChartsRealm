@@ -100,7 +100,7 @@
 {
     if ([key isEqualToString:@"toggleXValues"])
     {
-        _chartView.drawSliceTextEnabled = !_chartView.isDrawSliceTextEnabled;
+        _chartView.drawEntryLabelsEnabled = !_chartView.isDrawEntryLabelsEnabled;
         
         [_chartView setNeedsDisplay];
         return;
