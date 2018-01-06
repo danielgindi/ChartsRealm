@@ -27,6 +27,11 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     {
         super.init()
     }
+
+    public override init(label: String?)
+    {
+        super.init(label: label)
+    }
     
     public override init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, label: String?)
     {
