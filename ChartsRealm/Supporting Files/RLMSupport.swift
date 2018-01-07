@@ -15,6 +15,7 @@
 // limitations under the License.
 //
 ////////////////////////////////////////////////////////////////////////////
+
 import Realm
 
 extension RLMRealm {
@@ -85,6 +86,7 @@ extension RLMCollection {
 }
 
 // MARK: - Sync-related
+
 extension RLMSyncManager {
     public static var shared: RLMSyncManager {
         return __shared()

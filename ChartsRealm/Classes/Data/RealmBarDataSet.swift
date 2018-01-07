@@ -45,7 +45,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         super.init(results: results, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -62,7 +62,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: "DataSet")
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String, stackValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, stackValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -79,7 +79,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, stackValueField: String, label: String)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, stackValueField: String, label: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -96,7 +96,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, stackValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, stackValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         

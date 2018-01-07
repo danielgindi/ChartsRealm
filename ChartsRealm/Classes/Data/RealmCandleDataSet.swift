@@ -38,7 +38,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         super.init(results: results, xValueField: xValueField, yValueField: "", label: label)
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -55,7 +55,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         self.init(results: results, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField, label: "DataSet")
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
     {
         var converted: RLMResults<RLMObject>?
         

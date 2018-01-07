@@ -36,7 +36,7 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
         super.init(results: results, xValueField: nil, yValueField: yValueField, label: nil)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, labelField: String?)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, labelField: String?)
     {
         var converted: RLMResults<RLMObject>?
         

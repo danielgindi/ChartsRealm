@@ -67,7 +67,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         initialize()
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -84,7 +84,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: results, xValueField: nil, yValueField: yValueField, label: label)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -101,7 +101,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, label: "DataSet")
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -115,10 +115,10 @@ open class RealmBaseDataSet: ChartBaseDataSet
     
     @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
     {
-        self.init(results: results, yValueField: yValueField)
+        self.init(results: results, yValueField: yValueField, label: nil)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         
