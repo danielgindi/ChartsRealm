@@ -331,6 +331,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         {
             buildCache()
         }
+        guard _cache.count > 0 else { return nil }
         return _cache[i]
     }
     
