@@ -25,9 +25,16 @@ open class RealmRadarDataSet: RealmLineRadarDataSet, IRadarChartDataSet
 
     // MARK: - Data functions and accessors
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        return RadarChartDataEntry(value: object[_yValueField!] as! Double)
+        if let object = object as? RLMObject
+        {
+            return RadarChartDataEntry(value: object[_yValueField!] as! Double)
+        }
+        else
+        {
+            return RadarChartDataEntry(value: (object as! Object)[_yValueField!] as! Double)
+        }
     }
     
     // MARK: - Styling functions and accessors

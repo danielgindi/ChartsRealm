@@ -52,15 +52,29 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
     
     @objc internal var _labelField: String?
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
         if _labelField == nil
         {
-            return PieChartDataEntry(value: object[_yValueField!] as! Double)
+            if let object = object as? RLMObject
+            {
+                return PieChartDataEntry(value: object[_yValueField!] as! Double)
+            }
+            else
+            {
+                return PieChartDataEntry(value: (object as! Object)[_yValueField!] as! Double)
+            }
         }
         else
         {
-            return PieChartDataEntry(value: object[_yValueField!] as! Double, label: object[_labelField!] as? String)
+            if let object = object as? RLMObject
+            {
+                return PieChartDataEntry(value: object[_yValueField!] as! Double, label: object[_labelField!] as? String)
+            }
+            else
+            {
+                return PieChartDataEntry(value: (object as! Object)[_yValueField!] as! Double, label: (object as! Object)[_labelField!] as? String)
+            }
         }
     }
         

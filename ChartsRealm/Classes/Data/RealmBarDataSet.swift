@@ -197,9 +197,18 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     /// is calculated from the Entries that are added to the DataSet
     fileprivate var _stackSize = 1
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        let value = object[_yValueField!]
+        var value: Any?
+        if let object = object as? RLMObject
+        {
+            value = object[_yValueField!]
+        }
+        else
+        {
+            value = (object as! Object)[_yValueField!]
+        }
+
         let entry: BarChartDataEntry
         
         if let array = value as? RLMArray<RLMObject>
@@ -209,11 +218,25 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
             {
                 values.append(val[_stackValueField!] as! Double)
             }
-            entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, yValues: values)
+            if let object = object as? RLMObject
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, yValues: values)
+            }
+            else
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, yValues: values)
+            }
         }
         else
         {
-            entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: value as! Double)
+            if let object = object as? RLMObject
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: value as! Double)
+            }
+            else
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, y: value as! Double)
+            }
         }
         
         return entry

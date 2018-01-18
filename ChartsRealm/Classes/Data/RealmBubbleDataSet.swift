@@ -92,9 +92,17 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
     @objc open var normalizeSizeEnabled: Bool = true
     open var isNormalizeSizeEnabled: Bool { return normalizeSizeEnabled }
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        let entry = BubbleChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: object[_yValueField!] as! Double, size: object[_sizeField!] as! CGFloat)
+        let entry: BubbleChartDataEntry
+        if let object = object as? RLMObject
+        {
+            entry = BubbleChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: object[_yValueField!] as! Double, size: object[_sizeField!] as! CGFloat)
+        }
+        else
+        {
+            entry = BubbleChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, y: (object as! Object)[_yValueField!] as! Double, size: (object as! Object)[_sizeField!] as! CGFloat)
+        }
         
         return entry
     }

@@ -21,272 +21,284 @@ open class RealmBaseDataSet: ChartBaseDataSet
     {
         fatalError("RealmBaseDataSet is an abstract class, you must inherit from it. Also please do not call super.initialize().")
     }
-    
+
     public required init()
     {
         super.init()
-        
+
         // default color
         colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
-        
+
         initialize()
     }
-    
+
     public override init(label: String?)
     {
         super.init()
-        
+
         // default color
         colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
-        
+
         self.label = label
-        
+
         initialize()
     }
-    
+
+    // MARK: Realm for Objective-C
+
     @objc public init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String, label: String?)
     {
         super.init()
-        
+
         // default color
         colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
-        
+
         self.label = label
-        
-        _results = results
+
+        _results = results as? RLMResults<RLMObjectBase>
         _yValueField = yValueField
         _xValueField = xValueField
-        
+
         if _xValueField != nil
         {
             _results = _results?.sortedResults(usingKeyPath: _xValueField!, ascending: true)
         }
-        
+
         notifyDataSetChanged()
-        
+
         initialize()
     }
-    
-    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, label: String?)
-    {
-        var converted: RLMResults<RLMObject>?
-        
-        if results != nil
-        {
-            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
-        }
-        
-        self.init(results: converted, xValueField: xValueField, yValueField: yValueField, label: label)
-    }
-    
+
     @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String, label: String?)
     {
         self.init(results: results, xValueField: nil, yValueField: yValueField, label: label)
     }
-    
-    public convenience init<T: Object>(results: Results<T>?, yValueField: String, label: String?)
-    {
-        var converted: RLMResults<RLMObject>?
-        
-        if results != nil
-        {
-            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
-        }
-        
-        self.init(results: converted, yValueField: yValueField, label: label)
-    }
-    
+
     @objc public convenience init(results: RLMResults<RLMObject>?, xValueField: String?, yValueField: String)
     {
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, label: "DataSet")
     }
-    
-    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String)
-    {
-        var converted: RLMResults<RLMObject>?
-        
-        if results != nil
-        {
-            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
-        }
-        
-        self.init(results: converted, xValueField: xValueField, yValueField: yValueField)
-    }
-    
+
     @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
     {
         self.init(results: results, yValueField: yValueField, label: nil)
     }
-    
-    public convenience init<T: Object>(results: Results<T>?, yValueField: String)
+
+    // MARK: RealmSwift
+
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
-        
+
         if results != nil
         {
             converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
         }
-        
+
+        self.init(results: converted, xValueField: xValueField, yValueField: yValueField, label: label)
+    }
+
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, label: String?)
+    {
+        var converted: RLMResults<RLMObject>?
+
+        if results != nil
+        {
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
+        }
+
+        self.init(results: converted, yValueField: yValueField, label: label)
+    }
+
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String)
+    {
+        var converted: RLMResults<RLMObject>?
+
+        if results != nil
+        {
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
+        }
+
+        self.init(results: converted, xValueField: xValueField, yValueField: yValueField)
+    }
+
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String)
+    {
+        var converted: RLMResults<RLMObject>?
+
+        if results != nil
+        {
+            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
+        }
+
         self.init(results: converted, yValueField: yValueField)
     }
-    
+
     @objc public init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, label: String?)
     {
         super.init()
-        
+
         // default color
         colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
-        
+
         self.label = label
-        
+
         _yValueField = yValueField
         _xValueField = xValueField
-        
+
         if realm != nil
         {
             loadResults(realm: realm!, modelName: modelName)
         }
-        
+
         initialize()
     }
-    
+
     public convenience init(realm: Realm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, label: String?)
     {
         var converted: RLMRealm?
-        
+
         if realm != nil
         {
             converted = ObjectiveCSupport.convert(object: realm!)
         }
-        
+
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, xValueField: xValueField, yValueField: yValueField, label: label)
     }
-    
+
     @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
     {
         self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, label: label)
     }
-    
+
     public convenience init(realm: Realm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
     {
         var converted: RLMRealm?
-        
+
         if realm != nil
         {
             converted = ObjectiveCSupport.convert(object: realm!)
         }
-        
+
         self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, yValueField: yValueField, label: label)
     }
-    
+
     @objc open func loadResults(realm: RLMRealm, modelName: String)
     {
         loadResults(realm: realm, modelName: modelName, predicate: nil)
     }
-    
+
     @objc open func loadResults(realm: RLMRealm, modelName: String, predicate: NSPredicate?)
     {
         if predicate == nil
         {
-            _results = realm.allObjects(modelName)
+            _results = realm.allObjects(modelName) as? RLMResults<RLMObjectBase>
         }
         else
         {
-            _results = realm.objects(modelName, with: predicate!)
+            _results = realm.objects(modelName, with: predicate!) as? RLMResults<RLMObjectBase>
         }
-        
+
         if _xValueField != nil
         {
             _results = _results?.sortedResults(usingKeyPath: _xValueField!, ascending: true)
         }
-    
+
         notifyDataSetChanged()
     }
-    
+
     @nonobjc
     open func loadResults(realm: Realm, modelName: String)
     {
         loadResults(realm: ObjectiveCSupport.convert(object: realm), modelName: modelName)
     }
-    
+
     @nonobjc
     open func loadResults(realm: Realm, modelName: String, predicate: NSPredicate?)
     {
         loadResults(realm: ObjectiveCSupport.convert(object: realm), modelName: modelName, predicate: predicate)
     }
-    
+
     // MARK: - Data functions and accessors
-    
-    @objc internal var _results: RLMResults<RLMObject>?
+
+    @objc internal var _results: RLMResults<RLMObjectBase>?
     @objc internal var _yValueField: String?
     @objc internal var _xValueField: String?
     @objc internal var _cache = [ChartDataEntry]()
-    
+
     @objc internal var _yMax: Double = -Double.greatestFiniteMagnitude
     @objc internal var _yMin: Double = Double.greatestFiniteMagnitude
-    
+
     @objc internal var _xMax: Double = -Double.greatestFiniteMagnitude
     @objc internal var _xMin: Double = Double.greatestFiniteMagnitude
-    
+
     /// Makes sure that the cache is populated for the specified range
     @objc internal func buildCache()
     {
         guard let results = _results else { return }
-        
+
         _cache.removeAll()
         _cache.reserveCapacity(Int(results.count))
-        
+
         var xValue: Double = 0.0
-        
+
         var iterator = NSFastEnumerationIterator(results)
         while let e = iterator.next()
         {
-            _cache.append(buildEntryFromResultObject(e as! RLMObject, x: xValue))
+            _cache.append(buildEntryFromResultObject(e as! RLMObjectBase, x: xValue))
             xValue += 1.0
         }
     }
-    
-    @objc internal func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+
+    @objc internal func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        let entry = ChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: object[_yValueField!] as! Double)
-        
+        let entry: ChartDataEntry
+        if let object = object as? RLMObject
+        {
+            entry = ChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: object[_yValueField!] as! Double)
+        }
+        else
+        {
+            entry = ChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, y: (object as! Object)[_yValueField!] as! Double)
+        }
+
         return entry
     }
-    
+
     /// Makes sure that the cache is populated for the specified range
     @objc internal func clearCache()
     {
         _cache.removeAll()
     }
-    
+
     /// Use this method to tell the data set that the underlying data has changed
     open override func notifyDataSetChanged()
     {
         buildCache()
         calcMinMax()
     }
-    
+
     open override func calcMinMax()
     {
         if _cache.count == 0
         {
             return
         }
-        
+
         _yMax = -Double.greatestFiniteMagnitude
         _yMin = Double.greatestFiniteMagnitude
         _xMax = -Double.greatestFiniteMagnitude
         _xMin = Double.greatestFiniteMagnitude
-        
+
         for e in _cache
         {
             calcMinMax(entry: e)
         }
     }
-    
-     /// Updates the min and max x and y value of this DataSet based on the given Entry.
-     ///
-     /// - parameter e:
+
+    /// Updates the min and max x and y value of this DataSet based on the given Entry.
+    ///
+    /// - parameter e:
     @objc internal func calcMinMax(entry e: ChartDataEntry)
     {
         if e.y < _yMin
@@ -309,19 +321,19 @@ open class RealmBaseDataSet: ChartBaseDataSet
 
     /// - returns: The minimum y-value this DataSet holds
     open override var yMin: Double { return _yMin }
-    
+
     /// - returns: The maximum y-value this DataSet holds
     open override var yMax: Double { return _yMax }
-    
+
     /// - returns: The minimum x-value this DataSet holds
     open override var xMin: Double { return _xMin }
-    
+
     /// - returns: The maximum x-value this DataSet holds
     open override var xMax: Double { return _xMax }
-    
+
     /// - returns: The number of y-values this DataSet represents
     open override var entryCount: Int { return Int(_results?.count ?? 0) }
-    
+
     /// - returns: The entry object found at the given index (not x-value!)
     /// - throws: out of bounds
     /// if `i` is out of bounds, it may throw an out-of-bounds exception
@@ -334,7 +346,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         guard _cache.count > 0 else { return nil }
         return _cache[i]
     }
-    
+
     /// - returns: The first Entry object found at the given x-value with binary search.
     /// If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value according to the rounding.
     /// nil if no Entry object at that x-value.
@@ -353,7 +365,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         }
         return nil
     }
-    
+
     /// - returns: The first Entry object found at the given x-value with binary search.
     /// If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value.
     /// nil if no Entry object at that x-value.
@@ -365,46 +377,46 @@ open class RealmBaseDataSet: ChartBaseDataSet
     {
         return entryForXValue(xValue, closestToY: y, rounding: .closest)
     }
-    
+
     /// - returns: All Entry objects found at the given x-value with binary search.
     /// An empty array if no Entry object at that x-value.
     open override func entriesForXValue(_ xValue: Double) -> [ChartDataEntry]
     {
         /*var entries = [ChartDataEntry]()
-        
-        guard let results = _results else { return entries }
-        
-        if _xValueField != nil
-        {
-            let foundObjects = results.objectsWithPredicate(
-                NSPredicate(format: "%K == %f", _xValueField!, x)
-            )
-            
-            for e in foundObjects
-            {
-                entries.append(buildEntryFromResultObject(e as! RLMObject, x: x))
-            }
-        }
-        
-        return entries*/
-        
+
+         guard let results = _results else { return entries }
+
+         if _xValueField != nil
+         {
+         let foundObjects = results.objectsWithPredicate(
+         NSPredicate(format: "%K == %f", _xValueField!, x)
+         )
+
+         for e in foundObjects
+         {
+         entries.append(buildEntryFromResultObject(e as! RLMObject, x: x))
+         }
+         }
+
+         return entries*/
+
         var entries = [ChartDataEntry]()
-        
+
         var low = 0
         var high = _cache.count - 1
-        
+
         while low <= high
         {
             var m = (high + low) / 2
             var entry = _cache[m]
-            
+
             if xValue == entry.x
             {
                 while m > 0 && _cache[m - 1].x == xValue
                 {
                     m -= 1
                 }
-                
+
                 high = _cache.count
                 while m < high
                 {
@@ -417,10 +429,10 @@ open class RealmBaseDataSet: ChartBaseDataSet
                     {
                         break
                     }
-                    
+
                     m += 1
                 }
-                
+
                 break
             }
             else
@@ -435,10 +447,10 @@ open class RealmBaseDataSet: ChartBaseDataSet
                 }
             }
         }
-        
+
         return entries
     }
-    
+
     /// - returns: The array-index of the specified entry.
     /// If the no Entry at the specified x-value is found, this method returns the index of the Entry at the closest x-value according to the rounding.
     ///
@@ -451,27 +463,27 @@ open class RealmBaseDataSet: ChartBaseDataSet
         rounding: ChartDataSetRounding) -> Int
     {
         /*guard let results = _results else { return -1 }
-        
-        let foundIndex = results.indexOfObjectWithPredicate(
-            NSPredicate(format: "%K == %f", _xValueField!, x)
-        )
-        
-        // TODO: Figure out a way to quickly find the closest index
-        
-        return Int(foundIndex)*/
-        
+
+         let foundIndex = results.indexOfObjectWithPredicate(
+         NSPredicate(format: "%K == %f", _xValueField!, x)
+         )
+
+         // TODO: Figure out a way to quickly find the closest index
+
+         return Int(foundIndex)*/
+
         var low = 0
         var high = _cache.count - 1
         var closest = high
-        
+
         while low < high
         {
             let m = (low + high) / 2
-            
+
             let d1 = _cache[m].x - xValue
             let d2 = _cache[m + 1].x - xValue
             let ad1 = abs(d1), ad2 = abs(d2)
-            
+
             if ad2 < ad1
             {
                 // [m + 1] is closer to xValue
@@ -487,7 +499,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
             else
             {
                 // We have multiple sequential x-value with same distance
-                
+
                 if d1 >= 0.0
                 {
                     // Search in a lower place
@@ -499,14 +511,14 @@ open class RealmBaseDataSet: ChartBaseDataSet
                     low = m + 1
                 }
             }
-            
+
             closest = high
         }
-        
+
         if closest != -1
         {
             let closestXValue = _cache[closest].x
-            
+
             if rounding == .up
             {
                 // If rounding up, and found x-value is lower than specified x, and we can go upper...
@@ -523,7 +535,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
                     closest -= 1
                 }
             }
-            
+
             // Search by closest to y-value
             if !yValue.isNaN
             {
@@ -531,17 +543,17 @@ open class RealmBaseDataSet: ChartBaseDataSet
                 {
                     closest -= 1
                 }
-                
+
                 var closestYValue = _cache[closest].y
                 var closestYIndex = closest
-                
+
                 while true
                 {
                     closest += 1
                     if closest >= _cache.count { break }
-                    
+
                     let value = _cache[closest]
-                    
+
                     if value.x != closestXValue { break }
                     if abs(value.y - yValue) < abs(closestYValue - yValue)
                     {
@@ -549,14 +561,14 @@ open class RealmBaseDataSet: ChartBaseDataSet
                         closestYIndex = closest
                     }
                 }
-                
+
                 closest = closestYIndex
             }
         }
-        
+
         return closest
     }
-    
+
     /// - returns: The array-index of the specified entry
     ///
     /// - parameter e: the entry to search for
@@ -569,28 +581,28 @@ open class RealmBaseDataSet: ChartBaseDataSet
                 return i
             }
         }
-        
+
         return -1
     }
-    
+
     /// Not supported on Realm datasets
     open override func addEntry(_ e: ChartDataEntry) -> Bool
     {
         return false
     }
-    
+
     /// Not supported on Realm datasets
     open override func addEntryOrdered(_ e: ChartDataEntry) -> Bool
     {
         return false
     }
-    
+
     /// Not supported on Realm datasets
     open override func removeEntry(_ entry: ChartDataEntry) -> Bool
     {
         return false
     }
-    
+
     /// Checks if this DataSet contains the specified Entry.
     /// - returns: `true` if contains the entry, `false` ifnot.
     open override func contains(_ e: ChartDataEntry) -> Bool
@@ -602,34 +614,34 @@ open class RealmBaseDataSet: ChartBaseDataSet
                 return true
             }
         }
-        
+
         return false
     }
-    
+
     /// - returns: The fieldname that represents the "y-values" in the realm-data.
     @objc open var yValueField: String?
-    {
+        {
         get
         {
             return _yValueField
         }
     }
-    
+
     /// - returns: The fieldname that represents the "x-values" in the realm-data.
     @objc open var xValueField: String?
-    {
+        {
         get
         {
             return _xValueField
         }
     }
-    
+
     // MARK: - NSCopying
-    
+
     open override func copyWithZone(_ zone: NSZone?) -> AnyObject
     {
         let copy = super.copyWithZone(zone) as! RealmBaseDataSet
-        
+
         copy._results = _results
         copy._yValueField = _yValueField
         copy._xValueField = _xValueField
@@ -637,7 +649,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
         copy._yMin = _yMin
         copy._xMax = _xMax
         copy._xMin = _xMin
-        
+
         return copy
     }
 }
