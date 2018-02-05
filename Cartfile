@@ -1,2 +1,2 @@
 github "danielgindi/Charts" "master"
-github "realm/realm-cocoa" "master"
+github "realm/realm-cocoa" ~> 3.1.1
