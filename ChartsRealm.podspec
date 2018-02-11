@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
   s.osx.deployment_target = "10.11"
   s.source = { :git => "https://github.com/danielgindi/ChartsRealm.git", :tag => "v#{s.version}" }
-  s.source_files  = "ChartsRealm/Classes/**/*.swift"
+  s.source_files  = "ChartsRealm/Classes/**/*.swift", "ChartsRealm/Supporting Files/RLMSupport.swift"
   s.dependency "Charts", "3.0.5"
   s.dependency "RealmSwift", "~> 3.1.1"
 end
