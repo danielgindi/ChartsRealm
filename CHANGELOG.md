@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/danielgindi/ChartsRealm/tree/HEAD)
-
-[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.5...HEAD)
+## [v3.1.1](https://github.com/danielgindi/ChartsRealm/tree/v3.1.1) (2018-06-11)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.5...v3.1.1)
 
 **Closed issues:**
 
