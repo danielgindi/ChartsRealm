@@ -1,4 +1,4 @@
-**Version 3.0.5**
+**Version 3.1.1**
 
 ![alt tag](https://raw.github.com/danielgindi/Charts/master/Assets/feature_graphic.png)
   ![Supported Platforms](https://img.shields.io/cocoapods/p/ChartsRealm.svg) [![Releases](https://img.shields.io/github/release/danielgindi/ChartsRealm.svg)](https://github.com/danielgindi/ChartsRealm/releases) [![Latest pod release](https://img.shields.io/cocoapods/v/ChartsRealm.svg)](http://cocoapods.org/pods/chartsrealm) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/danielgindi/ChartsRealm.svg?branch=master)](https://travis-ci.org/danielgindi/ChartsRealm) [![codecov](https://codecov.io/gh/danielgindi/ChartsRealm/branch/master/graph/badge.svg)](https://codecov.io/gh/danielgindi/ChartsRealm)
@@ -7,7 +7,7 @@
 ### We've separated ChartsRealm from the main repositoy, for easier handling of dependencies.  
 ### Please avoid duplicate issues. Post on this repo for Charts+Realm specific problems, and other stuff in the issues section of the core Charts repo.  
 
-* Xcode 9.0 / Swift 4.0
+* Xcode 9.4 / Swift 4.1
 * iOS >= 8.0 (Use as an **Embedded** Framework)
 * tvOS >= 9.0
 * macOS >= 10.11
@@ -68,7 +68,7 @@ Add both `pod 'Charts'` and `pod 'ChartsRealm'` to your Podfile.
 Charts now include Carthage prebuilt binaries.
 
 ```carthage
-github "danielgindi/ChartsRealm" ~> 3.0.5
+github "danielgindi/ChartsRealm" ~> 3.1.1
 ```
 
 In order to build the binaries for a new release, use `carthage build --no-skip-current && carthage archive ChartsRealm`.
