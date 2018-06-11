@@ -2,11 +2,31 @@
 
 ## [Unreleased](https://github.com/danielgindi/ChartsRealm/tree/HEAD)
 
-[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.4...HEAD)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.5...HEAD)
 
 **Closed issues:**
 
+- Swift 4.1 and Realm 3.4 [\#22](https://github.com/danielgindi/ChartsRealm/issues/22)
+- Swift 4.1 Xcode 9.3? [\#21](https://github.com/danielgindi/ChartsRealm/issues/21)
+- Type 'RLMArray\<RLMObject\>' does not conform to protocol 'Sequence' [\#20](https://github.com/danielgindi/ChartsRealm/issues/20)
+- Swift 4.0.3 compilation errors [\#18](https://github.com/danielgindi/ChartsRealm/issues/18)
+
+## [v3.0.5](https://github.com/danielgindi/ChartsRealm/tree/v3.0.5) (2018-02-05)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.4...v3.0.5)
+
+**Closed issues:**
+
+- RealmSwift dependency locked to 2.10 [\#16](https://github.com/danielgindi/ChartsRealm/issues/16)
+- ChartsRealm failed building on Xcode 9.2, swift 4.0.3 [\#13](https://github.com/danielgindi/ChartsRealm/issues/13)
+- Carthage update/bootstrap download Swift 3.1 RealmSwift module for swift 4 [\#11](https://github.com/danielgindi/ChartsRealm/issues/11)
 - Can't push new pod version [\#8](https://github.com/danielgindi/ChartsRealm/issues/8)
+
+**Merged pull requests:**
+
+- update carthage and pod info to 3.0.5 [\#19](https://github.com/danielgindi/ChartsRealm/pull/19) ([liuxuan30](https://github.com/liuxuan30))
+- Add a missing designated initializer inheritance for RealmBarDataSet [\#15](https://github.com/danielgindi/ChartsRealm/pull/15) ([liuxuan30](https://github.com/liuxuan30))
+- Sync with Xcode 9.2, Swift 4.0.3 [\#14](https://github.com/danielgindi/ChartsRealm/pull/14) ([liuxuan30](https://github.com/liuxuan30))
+- migrate ChartsRealmDemo and bugfix [\#12](https://github.com/danielgindi/ChartsRealm/pull/12) ([liuxuan30](https://github.com/liuxuan30))
 
 ## [v3.0.4](https://github.com/danielgindi/ChartsRealm/tree/v3.0.4) (2017-10-09)
 [Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.3...v3.0.4)
