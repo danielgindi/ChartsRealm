@@ -22,68 +22,19 @@ open class RealmRadarDataSet: RealmLineRadarDataSet, IRadarChartDataSet
     {
         self.valueFont = NSUIFont.systemFont(ofSize: 13.0)
     }
-    
-    public required init()
-    {
-        super.init()
-    }
-    
-    public init(results: RLMResults<RLMObject>?, yValueField: String, label: String?)
-    {
-        super.init(results: results, xValueField: nil, yValueField: yValueField, label: label)
-    }
-    
-    public convenience init(results: Results<Object>?, yValueField: String, label: String?)
-    {
-        var converted: RLMResults<RLMObject>?
-        
-        if results != nil
-        {
-            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
-        }
-        
-        self.init(results: converted, yValueField: yValueField, label: label)
-    }
-    
-    public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
-    {
-        self.init(results: results, yValueField: yValueField, label: "DataSet")
-    }
-    
-    public convenience init(results: Results<Object>?, yValueField: String)
-    {
-        var converted: RLMResults<RLMObject>?
-        
-        if results != nil
-        {
-            converted = ObjectiveCSupport.convert(object: results!) as? RLMResults<RLMObject>
-        }
-        
-        self.init(results: converted, yValueField: yValueField)
-    }
-    
-    public init(realm: RLMRealm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
-    {
-        super.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, label: label)
-    }
-    
-    public convenience init(realm: Realm?, modelName: String, resultsWhere: String, yValueField: String, label: String?)
-    {
-        var converted: RLMRealm?
-        
-        if realm != nil
-        {
-            converted = ObjectiveCSupport.convert(object: realm!)
-        }
-        
-        self.init(realm: converted, modelName: modelName, resultsWhere: resultsWhere, yValueField: yValueField, label: label)
-    }
-    
+
     // MARK: - Data functions and accessors
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        return RadarChartDataEntry(value: object[_yValueField!] as! Double)
+        if let object = object as? RLMObject
+        {
+            return RadarChartDataEntry(value: object[_yValueField!] as! Double)
+        }
+        else
+        {
+            return RadarChartDataEntry(value: (object as! Object)[_yValueField!] as! Double)
+        }
     }
     
     // MARK: - Styling functions and accessors

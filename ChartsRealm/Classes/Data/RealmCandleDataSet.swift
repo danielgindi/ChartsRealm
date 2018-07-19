@@ -38,7 +38,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         super.init(results: results, xValueField: xValueField, yValueField: "", label: label)
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -55,7 +55,7 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
         self.init(results: results, xValueField: xValueField, highField: highField, lowField: lowField, openField: openField, closeField: closeField, label: "DataSet")
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String, highField: String, lowField: String, openField: String, closeField: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -96,14 +96,27 @@ open class RealmCandleDataSet: RealmLineScatterCandleRadarDataSet, ICandleChartD
     @objc internal var _openField: String?
     @objc internal var _closeField: String?
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        let entry = CandleChartDataEntry(
+        let entry: CandleChartDataEntry
+        if let object = object as? RLMObject
+        {
+            entry = CandleChartDataEntry(
             x: _xValueField == nil ? x : object[_xValueField!] as! Double,
             shadowH: object[_highField!] as! Double,
             shadowL: object[_lowField!] as! Double,
             open: object[_openField!] as! Double,
             close: object[_closeField!] as! Double)
+        }
+        else
+        {
+            entry = CandleChartDataEntry(
+                x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double,
+                shadowH: (object as! Object)[_highField!] as! Double,
+                shadowL: (object as! Object)[_lowField!] as! Double,
+                open: (object as! Object)[_openField!] as! Double,
+                close: (object as! Object)[_closeField!] as! Double)
+        }
         
         return entry
     }

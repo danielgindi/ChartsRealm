@@ -45,7 +45,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         super.init(results: results, xValueField: xValueField, yValueField: yValueField, label: label)
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, stackValueField: String, label: String?)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -62,7 +62,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: "DataSet")
     }
     
-    public convenience init(results: Results<Object>?, xValueField: String?, yValueField: String, stackValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, xValueField: String?, yValueField: String, stackValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -79,7 +79,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField, label: label)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, stackValueField: String, label: String)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, stackValueField: String, label: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -96,7 +96,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
         self.init(results: results, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
     }
     
-    public convenience init(results: Results<Object>?, yValueField: String, stackValueField: String)
+    public convenience init<T: Object>(results: Results<T>?, yValueField: String, stackValueField: String)
     {
         var converted: RLMResults<RLMObject>?
         
@@ -197,9 +197,18 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     /// is calculated from the Entries that are added to the DataSet
     fileprivate var _stackSize = 1
     
-    internal override func buildEntryFromResultObject(_ object: RLMObject, x: Double) -> ChartDataEntry
+    internal override func buildEntryFromResultObject(_ object: RLMObjectBase, x: Double) -> ChartDataEntry
     {
-        let value = object[_yValueField!]
+        var value: Any?
+        if let object = object as? RLMObject
+        {
+            value = object[_yValueField!]
+        }
+        else
+        {
+            value = (object as! Object)[_yValueField!]
+        }
+
         let entry: BarChartDataEntry
         
         if let array = value as? RLMArray<RLMObject>
@@ -209,11 +218,25 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
             {
                 values.append(val[_stackValueField!] as! Double)
             }
-            entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, yValues: values)
+            if let object = object as? RLMObject
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, yValues: values)
+            }
+            else
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, yValues: values)
+            }
         }
         else
         {
-            entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: value as! Double)
+            if let object = object as? RLMObject
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : object[_xValueField!] as! Double, y: value as! Double)
+            }
+            else
+            {
+                entry = BarChartDataEntry(x: _xValueField == nil ? x : (object as! Object)[_xValueField!] as! Double, y: value as! Double)
+            }
         }
         
         return entry
