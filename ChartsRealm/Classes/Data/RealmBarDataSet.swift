@@ -134,7 +134,7 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     
     @objc public convenience init(realm: RLMRealm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String)
     {
-        self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: nil, yValueField: yValueField, stackValueField: stackValueField)
+        self.init(realm: realm, modelName: modelName, resultsWhere: resultsWhere, xValueField: xValueField, yValueField: yValueField, stackValueField: stackValueField, label: nil)
     }
     
     public convenience init(realm: Realm?, modelName: String, resultsWhere: String, xValueField: String?, yValueField: String, stackValueField: String)

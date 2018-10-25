@@ -115,7 +115,7 @@ open class RealmBaseDataSet: ChartBaseDataSet
     
     @objc public convenience init(results: RLMResults<RLMObject>?, yValueField: String)
     {
-        self.init(results: results, yValueField: yValueField)
+        self.init(results: results, xValueField: nil, yValueField: yValueField)
     }
     
     public convenience init(results: Results<Object>?, yValueField: String)
