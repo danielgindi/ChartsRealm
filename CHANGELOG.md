@@ -1,5 +1,16 @@
 # Change Log
 
+## [3.2.1](https://github.com/danielgindi/ChartsRealm/tree/3.2.1) (2018-11-01)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.1.1...3.2.1)
+
+**Closed issues:**
+
+- Correct way to persist data with ChartDataEntry [\#2](https://github.com/danielgindi/ChartsRealm/issues/2)
+
+**Merged pull requests:**
+
+- update to Swift 4.2, Realm 3.11.1 [\#24](https://github.com/danielgindi/ChartsRealm/pull/24) ([liuxuan30](https://github.com/liuxuan30))
+
 ## [v3.1.1](https://github.com/danielgindi/ChartsRealm/tree/v3.1.1) (2018-06-11)
 [Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.0.5...v3.1.1)
 
