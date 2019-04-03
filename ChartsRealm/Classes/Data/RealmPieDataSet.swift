@@ -132,9 +132,8 @@ open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
     
     // MARK: - NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
-    {
-        let copy = super.copyWithZone(zone) as! RealmPieDataSet
+    open override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = super.copy(with: zone) as! RealmPieDataSet
         copy._sliceSpace = _sliceSpace
         copy.selectionShift = selectionShift
         return copy

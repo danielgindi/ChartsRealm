@@ -79,10 +79,8 @@ open class RealmLineRadarDataSet: RealmLineScatterCandleRadarDataSet, ILineRadar
     }
     
     // MARK: NSCopying
-    
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
-    {
-        let copy = super.copyWithZone(zone) as! RealmLineRadarDataSet
+    open override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = super.copy(with: zone) as! RealmLineRadarDataSet
         copy.fillColor = fillColor
         copy._lineWidth = _lineWidth
         copy.drawFilledEnabled = drawFilledEnabled

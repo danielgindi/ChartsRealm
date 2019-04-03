@@ -317,10 +317,8 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     open var highlightAlpha = CGFloat(120.0 / 255.0)
     
     // MARK: - NSCopying
-    
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
-    {
-        let copy = super.copyWithZone(zone) as! RealmBarDataSet
+    open override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = super.copy(with: zone) as! RealmBarDataSet
         copy._stackSize = _stackSize
         copy.stackLabels = stackLabels
         copy.barShadowColor = barShadowColor

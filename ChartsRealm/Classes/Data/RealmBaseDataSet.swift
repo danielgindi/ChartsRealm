@@ -625,10 +625,8 @@ open class RealmBaseDataSet: ChartBaseDataSet
     
     // MARK: - NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
-    {
-        let copy = super.copyWithZone(zone) as! RealmBaseDataSet
-        
+    open override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = super.copy(with: zone) as! RealmBaseDataSet
         copy._results = _results
         copy._yValueField = _yValueField
         copy._xValueField = _xValueField
