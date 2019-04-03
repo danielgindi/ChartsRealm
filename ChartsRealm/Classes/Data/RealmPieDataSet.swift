@@ -18,6 +18,8 @@ import Realm.Dynamic
 
 open class RealmPieDataSet: RealmBaseDataSet, IPieChartDataSet
 {
+    public var useValueColorForLine: Bool = false
+    
     open override func initialize()
     {
         self.valueTextColor = NSUIColor.white
