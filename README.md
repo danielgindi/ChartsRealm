@@ -1,4 +1,4 @@
-**Version 3.2.1**
+**Version 3.2.2**
 
 ![alt tag](https://raw.github.com/danielgindi/Charts/master/Assets/feature_graphic.png)
   ![Supported Platforms](https://img.shields.io/cocoapods/p/ChartsRealm.svg) [![Releases](https://img.shields.io/github/release/danielgindi/ChartsRealm.svg)](https://github.com/danielgindi/ChartsRealm/releases) [![Latest pod release](https://img.shields.io/cocoapods/v/ChartsRealm.svg)](http://cocoapods.org/pods/chartsrealm) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/danielgindi/ChartsRealm.svg?branch=master)](https://travis-ci.org/danielgindi/ChartsRealm) [![codecov](https://codecov.io/gh/danielgindi/ChartsRealm/branch/master/graph/badge.svg)](https://codecov.io/gh/danielgindi/ChartsRealm)
@@ -7,7 +7,7 @@
 ### We've separated ChartsRealm from the main repository, for easier handling of dependencies.  
 ### Please avoid duplicate issues. Post on this repo for Charts+Realm specific problems, and other stuff in the issues section of the core Charts repo.  
 
-* Xcode 10 / Swift 4.2
+* Xcode 10 / Swift 5.0
 * iOS >= 8.0 (Use as an **Embedded** Framework)
 * tvOS >= 9.0
 * macOS >= 10.11
@@ -18,7 +18,7 @@
 * Make sure you are running a supported version of Xcode.
   * Usually it is specified here a few lines above.
   * In most cases it will be the latest Xcode version.
-* Make sure that your project supports Swift 4.0
+* Make sure that your project supports latest Swift
 * Run `carthage checkout` in the project folder, to fetch dependencies (i.e Realm).
   * Realm is not required for using Charts. If you are not interested in using realm, go for the core library, [here](https://github.com/danielgindi/Charts).
   * If you don't have Carthage - you can get it [here](https://github.com/Carthage/Carthage/releases).
@@ -68,7 +68,7 @@ Add both `pod 'Charts'` and `pod 'ChartsRealm'` to your Podfile.
 Charts now include Carthage prebuilt binaries.
 
 ```carthage
-github "danielgindi/ChartsRealm" ~> 3.2.1
+github "danielgindi/ChartsRealm" ~> 3.2.2
 ```
 
 In order to build the binaries for a new release, use `carthage build --no-skip-current && carthage archive ChartsRealm`.
