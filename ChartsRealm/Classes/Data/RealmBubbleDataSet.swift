@@ -131,9 +131,9 @@ open class RealmBubbleDataSet: RealmBarLineScatterCandleBubbleDataSet, IBubbleCh
     
     // MARK: - NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
+    open override func copy(with zone: NSZone? = nil) -> Any
     {
-        let copy = super.copyWithZone(zone) as! RealmBubbleDataSet
+        let copy = super.copy(with: zone) as! RealmBubbleDataSet
         copy._xMin = _xMin
         copy._xMax = _xMax
         copy._maxSize = _maxSize

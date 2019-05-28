@@ -55,7 +55,7 @@ open class RealmLineDataSet: RealmLineRadarDataSet, ILineChartDataSet
         }
     }
     
-    @available(*, deprecated: 1.0, message: "Use `mode` instead.")
+    @available(*, deprecated, message: "Use `mode` instead.")
     open var drawCubicEnabled: Bool
     {
         get
@@ -68,10 +68,10 @@ open class RealmLineDataSet: RealmLineRadarDataSet, ILineChartDataSet
         }
     }
     
-    @available(*, deprecated: 1.0, message: "Use `mode` instead.")
+    @available(*, deprecated, message: "Use `mode` instead.")
     open var isDrawCubicEnabled: Bool { return drawCubicEnabled }
     
-    @available(*, deprecated: 1.0, message: "Use `mode` instead.")
+    @available(*, deprecated, message: "Use `mode` instead.")
     open var drawSteppedEnabled: Bool
     {
         get
@@ -84,7 +84,7 @@ open class RealmLineDataSet: RealmLineRadarDataSet, ILineChartDataSet
         }
     }
     
-    @available(*, deprecated: 1.0, message: "Use `mode` instead.")
+    @available(*, deprecated, message: "Use `mode` instead.")
     open var isDrawSteppedEnabled: Bool { return drawSteppedEnabled }
 
     /// The radius of the drawn circles.
@@ -173,9 +173,9 @@ open class RealmLineDataSet: RealmLineRadarDataSet, ILineChartDataSet
     
     // MARK: NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
+    open override func copy(with zone: NSZone? = nil) -> Any
     {
-        let copy = super.copyWithZone(zone) as! RealmLineDataSet
+        let copy = super.copy(with: zone) as! RealmLineDataSet
         copy.circleRadius = circleRadius
         copy.circleHoleRadius = circleHoleRadius
         copy.circleColors = circleColors

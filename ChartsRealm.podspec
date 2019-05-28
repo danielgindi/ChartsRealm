@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ChartsRealm"
-  s.version = "3.2.1"
+  s.version = "3.2.2"
   s.summary = "A Realm.io module for Charts"
   s.homepage = "https://github.com/danielgindi/ChartsRealm"
   s.license = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.11"
   s.source = { :git => "https://github.com/danielgindi/ChartsRealm.git", :tag => "v#{s.version}" }
   s.source_files  = "ChartsRealm/Classes/**/*.swift", "ChartsRealm/Supporting Files/RLMSupport.swift"
-  s.dependency "Charts", "~> 3.2.1"
-  s.dependency "RealmSwift", "~> 3.11.1"
+  s.dependency "Charts", "~> 3.3.0"
+  s.dependency "RealmSwift", "~> 3.15.0"
 end
