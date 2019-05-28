@@ -318,9 +318,9 @@ open class RealmBarDataSet: RealmBarLineScatterCandleBubbleDataSet, IBarChartDat
     
     // MARK: - NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
+    open override func copy(with zone: NSZone? = nil) -> Any
     {
-        let copy = super.copyWithZone(zone) as! RealmBarDataSet
+        let copy = super.copy(with: zone) as! RealmBarDataSet
         copy._stackSize = _stackSize
         copy.stackLabels = stackLabels
         copy.barShadowColor = barShadowColor

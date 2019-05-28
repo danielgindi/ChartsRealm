@@ -42,9 +42,9 @@ open class RealmLineScatterCandleRadarDataSet: RealmBarLineScatterCandleBubbleDa
     
     // MARK: NSCopying
     
-    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
+    open override func copy(with zone: NSZone? = nil) -> Any
     {
-        let copy = super.copyWithZone(zone) as! RealmLineScatterCandleRadarDataSet
+        let copy = super.copy(with: zone) as! RealmLineScatterCandleRadarDataSet
         copy.drawHorizontalHighlightIndicatorEnabled = drawHorizontalHighlightIndicatorEnabled
         copy.drawVerticalHighlightIndicatorEnabled = drawVerticalHighlightIndicatorEnabled
         return copy
