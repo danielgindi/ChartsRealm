@@ -1,5 +1,33 @@
 # Change Log
 
+## [v3.4.0](https://github.com/danielgindi/ChartsRealm/tree/v3.4.0) (2019-10-09)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.2.2...v3.4.0)
+
+**Closed issues:**
+
+- Crash on iOS13 ! need to update RealmSwift [\#33](https://github.com/danielgindi/ChartsRealm/issues/33)
+- How to use this with Swift Realm ? Can't init DataSet [\#32](https://github.com/danielgindi/ChartsRealm/issues/32)
+
+**Merged pull requests:**
+
+- Update RealmSwift version to 3.18 [\#34](https://github.com/danielgindi/ChartsRealm/pull/34) ([neetrath](https://github.com/neetrath))
+
+## [v3.2.2](https://github.com/danielgindi/ChartsRealm/tree/v3.2.2) (2019-05-28)
+[Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/3.2.1...v3.2.2)
+
+**Closed issues:**
+
+- Would you update to Swift 5.0 ? Or have a schedule? [\#30](https://github.com/danielgindi/ChartsRealm/issues/30)
+- Xcode 10.1 / Swift 4.2 [\#29](https://github.com/danielgindi/ChartsRealm/issues/29)
+- Build fail 3.2.1 [\#27](https://github.com/danielgindi/ChartsRealm/issues/27)
+- I can't use pod  [\#25](https://github.com/danielgindi/ChartsRealm/issues/25)
+- Throwing errors on XCode 10 / iOS12 [\#23](https://github.com/danielgindi/ChartsRealm/issues/23)
+
+**Merged pull requests:**
+
+- Support Swift 5.0, dependency update to Charts 3.3.0 and Realm 3.15.0 [\#31](https://github.com/danielgindi/ChartsRealm/pull/31) ([liuxuan30](https://github.com/liuxuan30))
+- \(doc\) Fix typo in README.md [\#26](https://github.com/danielgindi/ChartsRealm/pull/26) ([wlim33](https://github.com/wlim33))
+
 ## [3.2.1](https://github.com/danielgindi/ChartsRealm/tree/3.2.1) (2018-11-01)
 [Full Changelog](https://github.com/danielgindi/ChartsRealm/compare/v3.1.1...3.2.1)
 
